@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";  // Import the Head component
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,9 +20,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <Head>
+        {/* Add the favicon here */}
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
